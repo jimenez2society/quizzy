@@ -5,9 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>quizzy</title>
   </head>
-  <body>
-    <div class="bg-red-500 container-main mx-auto">Hello</div>
+  <body class="h-full bg-primaryDarkBlue">
+    <header class="bg-red-500 container-main mx-auto">
+      <div class="w-full pt-10">
+        <a href="#"><img src="./assets/svg/quizzyLogo.svg" alt="" /></a>
+      </div>
+    </header>
+    <main class="welcome-screen text-center pt-20">
+      <h1 class="main-heading text-offWhite">Don't get dizzy</h1>
+      <h2 class="sub-heading">GET QUIZZY</h2>
+      <div class="flex w-max space-y-5 flex-col mx-auto">
+        <button class="begin bg-primaryTeal btn-border px-14 py-4">
+          Begin quiz
+        </button>
+        <button class="secondary-btn px-14 py-4 btn-border text-primaryTeal">
+          Highscores
+        </button>
+      </div>
+    </main>
+    <script src="./js/app.js" type="module"></script>
   </body>
 </html>

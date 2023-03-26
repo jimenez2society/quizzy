@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Krona+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>quizzy</title>
+  </head>
+  <body class="h-full bg-primaryDarkBlue">
+    <!-- quizzy nav with logo -->
+    <header class="bg-red-500 container-main mx-auto">
+      <div class="w-full pt-10">
+        <a href="index.html"
+          ><img src="./assets/svg/quizzyLogo.svg" alt=""
+        /></a>
+      </div>
+    </header>
+    <!-- main content for questions -->
+    <main class="container-main mx-auto grid grid-cols-12 pt-20 justify-center">
+      <div
+        class="question-container bg-secondaryBlueDark 672px w-full col-start-3 col-end-11"
+      >
+        <!-- header of the question container -->
+        <div class="question-container-heading flex justify-between py-6 px-14">
+          <div class="currentTester flex items-center gap-6">
+            <img src="./assets/svg//userIcon.svg" alt="" />
+            <span>Corey Jimenez</span>
+          </div>
+          <div class="progression flex flex-col gap-2">
+            <span class="text-offWhite">Total test: 20% complete</span>
+            <span class="progressBar bg-secondaryBlueLight h-1 w-full"></span>
+          </div>
+        </div>
+        <!-- extra data about test -->
+        <div
+          class="test-data flex items-center justify-between w-full pt-10 px-14"
+        >
+          <p class="questions-left">10 questions left</p>
+          <div class="time-remaining">
+            <p class="time-remaining--text"></p>
+          </div>
+        </div>
+        <!-- the question and question choices -->
+        <div class="question px-14 pt-10">
+          <p class="question-text text-offWhite">
+            How do you create an object in javascript?
+          </p>
+          <form class="choices flex flex-col gap-4 pt-12">
+            <div class="question-choice py-4 px-6 flex items-center gap-4">
+              <input
+                id="a"
+                name="choice"
+                class="choice"
+                type="radio"
+                value="a"
+              />
+              <label class="choice-label" for="a"></label>
+              <code class="text-offWhite">my_object = {“name”:”corey”}</code>
+            </div>
+            <div class="question-choice py-4 px-6 flex items-center gap-4">
+              <input
+                id="b"
+                name="choice"
+                class="choice"
+                type="radio"
+                value="b"
+              />
+              <label class="choice-label" for="b"></label
+              ><code class="text-offWhite">my_object = {“name”:”corey”}</code>
+            </div>
+            <div class="question-choice py-4 px-6 flex items-center gap-4">
+              <input
+                id="c"
+                name="choice"
+                class="choice"
+                type="radio"
+                value="c"
+              />
+              <label class="choice-label" for="c"></label>
+              <code class="text-offWhite">my_object = {“name”:”corey”}</code>
+            </div>
+            <button class="submit-answer text-offWhite mt-4 py-2 ml-auto bg-primaryPurple w-36">Submit answer</button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="./js/app.js" type="module"></script>
+  </body>
+</html>
