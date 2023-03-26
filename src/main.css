@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* creates a custom container rather the one provided by tailwind */
+.container-main {
+  max-width: 1720px;
+}
