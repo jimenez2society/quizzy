@@ -27,7 +27,7 @@
   </head>
   <body class="h-full bg-primaryDarkBlue">
     <!-- quizzy nav with logo -->
-    <header class="bg-red-500 container-main mx-auto">
+    <header class="bg-red-500 container-main mx-auto px-10">
       <div class="w-full pt-10">
         <a href="index.html"
           ><img src="./assets/svg/quizzyLogo.svg" alt=""
@@ -61,9 +61,7 @@
         </div>
         <!-- the question and question choices -->
         <div class="question px-14 pt-10">
-          <p class="question-text text-offWhite">
-            How do you create an object in javascript?
-          </p>
+          <p class="question-text text-offWhite"></p>
           <form class="choices flex flex-col gap-4 pt-12">
             <div class="question-choice py-4 px-6 flex items-center gap-4">
               <input
@@ -74,7 +72,7 @@
                 value="a"
               />
               <label class="choice-label" for="a"></label>
-              <code class="text-offWhite">my_object = {“name”:”corey”}</code>
+              <code class="a text-offWhite">my_object = {“name”:”corey”}</code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">
               <input
@@ -85,7 +83,7 @@
                 value="b"
               />
               <label class="choice-label" for="b"></label
-              ><code class="text-offWhite">my_object = {“name”:”corey”}</code>
+              ><code class="b text-offWhite">my_object = {“name”:”corey”}</code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">
               <input
@@ -96,9 +94,13 @@
                 value="c"
               />
               <label class="choice-label" for="c"></label>
-              <code class="text-offWhite">my_object = {“name”:”corey”}</code>
+              <code class="c text-offWhite">my_object = {“name”:”corey”}</code>
             </div>
-            <button class="submit-answer text-offWhite mt-4 py-2 ml-auto bg-primaryPurple w-36">Submit answer</button>
+            <button
+              class="submit-answer text-offWhite mt-4 py-4 ml-auto bg-primaryPurple w-36 rounded-sm"
+            >
+              Submit answer
+            </button>
           </form>
         </div>
       </div>
