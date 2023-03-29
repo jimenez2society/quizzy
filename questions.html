@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./build/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,11 +26,14 @@
     <title>quizzy</title>
   </head>
   <body class="h-full bg-primaryDarkBlue">
+    <div class="modal-overlay">
+      <div class="modal">HELLO</div>
+    </div>
     <!-- quizzy nav with logo -->
     <header class="bg-red-500 container-main mx-auto px-10">
       <div class="w-full pt-10">
         <a href="index.html"
-          ><img src="./assets/svg/quizzyLogo.svg" alt=""
+          ><img src="./src/assets/svg/quizzyLogo.svg" alt=""
         /></a>
       </div>
     </header>
@@ -42,7 +45,7 @@
         <!-- header of the question container -->
         <div class="question-container-heading flex justify-between py-6 px-14">
           <div class="currentTester flex items-center gap-6">
-            <img src="./assets/svg//userIcon.svg" alt="" />
+            <img src="./src/assets/svg//userIcon.svg" alt="" />
             <span>Corey Jimenez</span>
           </div>
           <div class="progression flex flex-col gap-2">
@@ -72,7 +75,7 @@
                 value="a"
               />
               <label class="choice-label" for="a"></label>
-              <code class="a text-offWhite">my_object = {“name”:”corey”}</code>
+              <code class="a text-offWhite"></code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">
               <input
@@ -83,7 +86,7 @@
                 value="b"
               />
               <label class="choice-label" for="b"></label
-              ><code class="b text-offWhite">my_object = {“name”:”corey”}</code>
+              ><code class="b text-offWhite"></code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">
               <input
@@ -94,10 +97,11 @@
                 value="c"
               />
               <label class="choice-label" for="c"></label>
-              <code class="c text-offWhite">my_object = {“name”:”corey”}</code>
+              <code class="c text-offWhite"></code>
             </div>
             <button
               class="submit-answer text-offWhite mt-4 py-4 ml-auto bg-primaryPurple w-36 rounded-sm"
+              type="submit"
             >
               Submit answer
             </button>
@@ -105,6 +109,6 @@
         </div>
       </div>
     </main>
-    <script src="./js/app.js" type="module"></script>
+    <script src="./src/assets/js/app.js" type="module"></script>
   </body>
 </html>
