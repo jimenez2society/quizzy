@@ -1158,3 +1158,55 @@ code {
 }
 
 /* ######  HIGHSCORES PAGE ###### */
+
+.highscores {
+  padding: 0 2rem;
+}
+
+.highscores-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #d5d8f0;
+  margin-bottom: 4rem;
+}
+
+.highscore-users {
+}
+
+.highscores-users--header {
+  display: flex;
+  width: 700px;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.highscores-users--header span {
+  width: 100%;
+  display: block;
+  color: #d5d8f0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.highscore-user {
+  background-color: #43486d;
+  margin: 0 auto;
+  width: 700px;
+  max-width: 100%;
+  border-radius: 0.4rem;
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+  color: #d5d8f0;
+}
+
+.highscore-user:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.highscore-user div {
+  width: 100%;
+}

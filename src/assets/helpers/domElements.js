@@ -87,3 +87,21 @@ export const wrongAnswerItem = (question, answerSubmitted, correctAnswer) => {
 
   return list;
 };
+export const highscoreUser = (name, score, rank) => {
+  let highScoreUserContainer = document.createElement("div");
+  let highScoreRank = document.createElement("div");
+  let highScoreUserName = document.createElement("div");
+  let highScore = document.createElement("div");
+
+  highScoreUserContainer.className = "highscore-user";
+  highScoreRank.className = "highscore-rank";
+  highScoreUserName.className = "highscore-user-name";
+  highScore.className = "highscore-user-score";
+  highScoreRank.textContent = rank;
+  highScoreUserName.textContent = name;
+  highScore.textContent = score;
+  highScoreUserContainer.appendChild(highScoreRank);
+  highScoreUserContainer.appendChild(highScoreUserName);
+  highScoreUserContainer.appendChild(highScore);
+  return highScoreUserContainer;
+};

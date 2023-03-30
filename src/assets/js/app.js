@@ -1,12 +1,24 @@
 // path and javascript for /index.html
 
-import { correctAnswerItem, wrongAnswerItem } from "../helpers/domElements.js";
-import { homePage, overviewPage, quizPage, redirect } from "./routes.js";
+import {
+  correctAnswerItem,
+  highscoreUser,
+  wrongAnswerItem,
+} from "../helpers/domElements.js";
+import { sortScore } from "../helpers/sort.js";
+import {
+  highscoresPage,
+  homePage,
+  overviewPage,
+  quizPage,
+  redirect,
+} from "./routes.js";
 
 import { TestSession } from "./TestSession.js";
 import { User } from "./User.js";
 
 let user = JSON.parse(localStorage.getItem("currentUser"));
+let allUsers = JSON.parse(localStorage.getItem("allUsers"));
 let endScore = JSON.parse(localStorage.getItem("score"));
 
 // redirect to home path
@@ -61,4 +73,14 @@ if (overviewPage.isPath) {
   testerNameEl.textContent = user.name;
   scoreEl.textContent = user.score;
   console.log(user);
+}
+
+if (highscoresPage.isPath) {
+  sortScore(allUsers, 0, allUsers.length - 1);
+  let highscoreContainer = document.querySelector(".highscores-users");
+
+  allUsers.forEach((user, i) =>
+    highscoreContainer.appendChild(highscoreUser(user.name, user.score, i + 1))
+  );
+  console.log(allUsers);
 }

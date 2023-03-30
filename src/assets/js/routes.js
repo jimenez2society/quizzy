@@ -14,3 +14,7 @@ export const overviewPage = {
   isPath: window.location.pathname === "/overview.html",
   pathName: "/overview.html",
 };
+export const highscoresPage = {
+  isPath: window.location.pathname === "/highscores.html",
+  pathName: "/highscores.html",
+};
