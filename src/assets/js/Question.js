@@ -6,6 +6,7 @@ export class Question {
     this.choices = choices;
     // correct answers will always be the first item in the array
     this.correctAnswer = choices[0];
+    this.selectedAnswer = {};
     this.randomizeLetters();
   }
   randomizeLetters() {
@@ -63,6 +64,7 @@ export class Question {
     if (this.correctAnswer === chosenAnswer) {
       return true;
     } else {
+      this.selectedAnswer = chosenAnswer;
       return false;
     }
   }

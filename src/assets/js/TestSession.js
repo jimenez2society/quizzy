@@ -1,12 +1,21 @@
-import { questions } from "./Questions.js";
+import questions from "./Questions.js";
+import { overviewPage, redirect } from "./routes.js";
+import { User } from "./User.js";
 
 export class TestSession {
   constructor(currentUser) {
     // gets all users that are saved in the localStorage
     this.allUsers = JSON.parse(localStorage.getItem("users")) || [];
     // gets current user from params
+
+    // if currentUser is not instance of User then it makes it a User
+    if (!(currentUser instanceof User)) {
+      currentUser = new User(currentUser.name, currentUser.score);
+    }
+    // sets this.currentUser to the currentUser
     this.currentUser = currentUser;
 
+    console.log({ juice: this.currentUser });
     // setting correctAnswers, wrongAnswers, and notAnswered to empty arrays
     this.correctAnswers = [];
     this.wrongAnswers = [];
@@ -17,13 +26,18 @@ export class TestSession {
 
     this.lastIndex = questions.length - 1;
     // timerSeconds initialized to 30 seconds
-    this.timerSeconds = 30;
+    this.timerSeconds = 15;
     // degree starts at 0 for the progress circle for the timer
     this.degPerSecond = 0;
 
     // gets choices form
     this.form = document.querySelector(".choices");
     this.timeRemainingText = document.querySelector(".time-remaining--text");
+    // handle questions left
+    this.questionsLeft = questions.length;
+    this.percentComplete = 0;
+    this.updateQuestionsLeft();
+    this.updateProgressBar();
 
     // handles when the submit button is clicked on the form
     this.submitBtnHandler = document
@@ -66,18 +80,26 @@ export class TestSession {
             })
           );
           //   rediect to overview page
-          window.location.pathname = "/index.html";
+          // window.location.pathname = "/overview.html";
+          redirect(overviewPage);
           return;
         }
         // reset degPerSecond and timerSeconds to default
         this.degPerSecond = 0;
-        this.timerSeconds = 30;
+        this.timerSeconds = 15;
         this.timeRemainingText.textContent = this.timerSeconds;
         // moves to next question
         this.nextQuestion();
       });
   }
   startQuiz() {
+    //  allows for the whole choice container to be clicked and sets the radio input to checked
+    Array.from(document.querySelectorAll(".question-choice")).map((item) => {
+      item.addEventListener("click", (e) => {
+        Array.from(e.target.children)[0].checked = true;
+      });
+    });
+
     // renders the first question
     questions[this.currentIndex].render();
     // selecting all neccesary DOM elements for later use
@@ -96,7 +118,7 @@ export class TestSession {
       //   create a conic-gradient for the circle and pass it a dynamic degree setting
       timeRemaining.style.background = `conic-gradient(#43486D ${this.degPerSecond}deg, #46dfe5 0deg)`;
       //   adds 1.2 degrees per 100ms to give it a smoother effect per second
-      this.degPerSecond += 1.2;
+      this.degPerSecond += 2.4;
     }, 100);
     let secondsInterval = setInterval(() => {
       // if timerSeconds reaches zero then push question to the notAnswered array because it is assumed they didn't answer
@@ -115,9 +137,11 @@ export class TestSession {
           location.pathname = "./index.html";
           clearInterval(secondsInterval);
         }
+
         // go to next question, reset timerSeconds and restart quiz chich just restarts the pattern
+
         this.nextQuestion();
-        this.timerSeconds = 30;
+        this.timerSeconds = 15;
 
         this.restartQuiz();
 
@@ -128,6 +152,9 @@ export class TestSession {
     }, 1000);
   }
   nextQuestion() {
+    this.questionsLeft--;
+    this.updateQuestionsLeft();
+    this.updateProgressBar(true);
     // reset form
     this.form.reset();
     // increment index for next question
@@ -138,5 +165,19 @@ export class TestSession {
   restartQuiz() {
     // initiate startQuiz again
     this.startQuiz();
+  }
+  updateQuestionsLeft() {
+    document.querySelector(".questions-left").textContent = this.questionsLeft;
+  }
+  updateProgressBar(started = false) {
+    if (started) {
+      this.percentComplete += (questions.length / 100) * 100;
+    }
+
+    document.querySelector(".progression-percent").textContent =
+      this.percentComplete;
+    document.querySelector(
+      ".progressBarFillUp"
+    ).style.width = `${this.percentComplete}%`;
   }
 }

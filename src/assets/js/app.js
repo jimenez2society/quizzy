@@ -1,41 +1,64 @@
 // path and javascript for /index.html
 
-import { Question } from "./Question.js";
-import { questions } from "./Questions.js";
+import { correctAnswerItem, wrongAnswerItem } from "../helpers/domElements.js";
+import { homePage, overviewPage, quizPage, redirect } from "./routes.js";
+
 import { TestSession } from "./TestSession.js";
 import { User } from "./User.js";
 
+let user = JSON.parse(localStorage.getItem("currentUser"));
+let endScore = JSON.parse(localStorage.getItem("score"));
+
 // redirect to home path
 if (window.location.pathname === "/") {
-  window.location.pathname = "/index.html";
+  redirect(homePage);
 }
-if (window.location.pathname === "/index.html") {
+if (homePage.isPath) {
   document.querySelector(".begin").addEventListener("click", (e) => {
     document.querySelector(".welcome-screen").classList.add("fade");
     setTimeout(() => {
       document.querySelector(".welcome-screen").classList.add("hide");
-      window.location.pathname = "/questions.html";
+      redirect(quizPage);
     }, 1400);
   });
 }
 
-if (window.location.pathname === "/questions.html") {
-  //  allows for the whole choice container to be clicked and sets the radio input to checked
-  Array.from(document.querySelectorAll(".question-choice")).map((item) => {
-    item.addEventListener("click", (e) => {
-      Array.from(e.target.children)[0].checked = true;
-    });
-  });
-
-  // ask user for name
-  let user = prompt("Choose name");
-  // document.querySelector(".modal-overlay").classList.add("open");
-  // create new user
-  let currentUser = new User(user);
-  // create a new quizSession with the user
-  if (currentUser) {
-    let quizSession = new TestSession(currentUser);
+if (quizPage.isPath) {
+  // if user exists create session with exising
+  if (localStorage.getItem("currentUser")) {
+    let quizSession = new TestSession(user);
     // starts the quiz
     quizSession.startQuiz();
-  }
+  } // create new user
+  if (!user) User.createUserAndSession();
+}
+if (overviewPage.isPath) {
+  console.log({ endScore });
+  let scoreEl = document.querySelector(".score");
+  let testerNameEl = document.querySelector(".current-tester-name");
+  let correctSection = document.querySelector("#correct-answers");
+  let wrongSection = document.querySelector("#wrong-answers");
+  let wrongAnswersAmount = document.querySelector(".wrong-answers-amount");
+  let correctAnswerAmount = document.querySelector(".correct-answers-amount");
+  let percent = document.querySelector(".current-test-percent--data");
+  let totalAnswers =
+    endScore.correct.length + endScore.wrong.length + endScore.blank.length;
+  percent.textContent = Math.floor(
+    (endScore.correct.length / totalAnswers) * 100
+  );
+  correctAnswerAmount.textContent = endScore.correct.length;
+  wrongAnswersAmount.textContent = endScore.wrong.length;
+  endScore.correct.forEach((item) =>
+    correctSection.appendChild(
+      correctAnswerItem(item.question, item.correctAnswer)
+    )
+  );
+  endScore.wrong.forEach((item) =>
+    wrongSection.appendChild(
+      wrongAnswerItem(item.question, item.selectedAnswer, item.correctAnswer)
+    )
+  );
+  testerNameEl.textContent = user.name;
+  scoreEl.textContent = user.score;
+  console.log(user);
 }
