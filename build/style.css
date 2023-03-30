@@ -782,6 +782,14 @@ body {
   display: none;
 }
 
+.new-user-btn {
+  display: none;
+}
+
+.new-user-btn.show {
+  display: block;
+}
+
 /* ######  QUESTIONS PAGE ###### */
 
 .time-remaining {
@@ -1046,10 +1054,10 @@ code {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  font-size: 1.4rem;
 }
 
 .correct-answers-amount {
-  /* background-color: #d5d8f0; */
   border: 1px solid #46dfe5;
   font-size: 0.6rem;
   padding: 0.1rem 0.3rem;

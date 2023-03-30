@@ -26,12 +26,24 @@ if (window.location.pathname === "/") {
   redirect(homePage);
 }
 if (homePage.isPath) {
-  document.querySelector(".begin").addEventListener("click", (e) => {
+  const beginQuiz = () => {
     document.querySelector(".welcome-screen").classList.add("fade");
     setTimeout(() => {
       document.querySelector(".welcome-screen").classList.add("hide");
       redirect(quizPage);
     }, 1400);
+  };
+  if (user) {
+    let newUserBtn = document.querySelector(".new-user-btn");
+    newUserBtn.classList.add("show");
+    newUserBtn.addEventListener("click", (e) => {
+      localStorage.removeItem("score");
+      localStorage.removeItem("currentUser");
+      beginQuiz();
+    });
+  }
+  document.querySelector(".begin").addEventListener("click", (e) => {
+    beginQuiz();
   });
 }
 
