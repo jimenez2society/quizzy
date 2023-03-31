@@ -63,3 +63,13 @@
 - We display the rank, name, and score
 
 ![the overview page](./src/assets/img/highscores-page.png)
+
+## Overview
+
+- The website is not yet fully responsive to mobile
+- I had alot of fun creating this app
+- I was able to use quicksort for one of my functionalities
+
+### Live Demo
+
+[quizzy site](https://6426a11d27230851a0892834--quizzyness.netlify.app)
