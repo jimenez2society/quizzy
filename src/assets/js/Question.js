@@ -68,7 +68,6 @@ export class Question {
       return false;
     } else if (!chosenAnswer) {
       this.selectedAnswer = chosenAnswer;
-      console.log({ d: this.selectedAnswer, chosenAnswer });
       return false;
     }
   }
