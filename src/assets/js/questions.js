@@ -1,5 +1,6 @@
 import { Question } from "./Question.js";
 // creates an array of questions with answers
+// every question has a right answer which will always be the first item in the array
 const questions = [
   new Question("How do you create an object in javascript?", [
     'let myObject = {name:"Jimmy"}',

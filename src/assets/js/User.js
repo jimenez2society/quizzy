@@ -27,26 +27,40 @@ export class User {
   }
   //   updates the allUsers with new data about user
   update() {
+    // gets the usernameEl
     let usernameEl = document.querySelector(".username");
+    // updates the text with the currentUser
     usernameEl.textContent = this.name;
+
+    // sets the currentUser to the localStorage
     localStorage.setItem("currentUser", JSON.stringify(this));
+    // gets all users from localStorage
     let allUsers = JSON.parse(localStorage.getItem("allUsers"));
     if (!allUsers) {
+      // return if there is no users
       return;
     } else {
+      // else we filter through the allUsers array and select all users except the one with the currentUsers name
       let filteredArr = allUsers.filter((user) => user.name !== this.name);
+      // then we push the current user back into the filtered array (ideally the currentUser has some new data)
       filteredArr.push(this);
+      // set filteredUsers to localStorage. Updating the user with it's new data
       localStorage.setItem("allUsers", JSON.stringify(filteredArr));
     }
   }
+  // a method that can be called on the class itself called createUserAndSession this usually is called if there is no current user in the localStorage
   static createUserAndSession() {
+    // open the modal
     document.querySelector(".modal-overlay").classList.add("open");
+    // selects the begin button that is in tho modal
     let beginBtn = document.querySelector(".begin-btn");
+    // selects the form that is in tho modal
     let form = document.querySelector(".modal-body-form");
-    let input = document.querySelector("#username");
+    // prevents the default on the form
     form.addEventListener("submit", (e) => {
       e.preventDefault();
     });
+    // when the button is click we get the data from the form and create the new user, new session, close the modal and then start the quiz
     beginBtn.addEventListener("click", (e) => {
       let data = new FormData(form, beginBtn);
 

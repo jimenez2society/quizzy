@@ -64,9 +64,11 @@ export class Question {
     if (this.correctAnswer === chosenAnswer) {
       return true;
     } else if (this.correctAnswer !== chosenAnswer) {
-      // this.selectedAnswer = chosenAnswer;
+      this.selectedAnswer = chosenAnswer;
       return false;
     } else if (!chosenAnswer) {
+      this.selectedAnswer = chosenAnswer;
+      console.log({ d: this.selectedAnswer, chosenAnswer });
       return false;
     }
   }

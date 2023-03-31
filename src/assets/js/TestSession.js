@@ -169,9 +169,11 @@ export class TestSession {
     // initiate startQuiz again
     this.startQuiz();
   }
+  // updates the questions left element to show how many questions are left
   updateQuestionsLeft() {
     document.querySelector(".questions-left").textContent = this.questionsLeft;
   }
+  // updates the progress bar to show how much of the test the user has left
   updateProgressBar(started = false) {
     if (started) {
       this.percentComplete += (questions.length / 100) * 100;

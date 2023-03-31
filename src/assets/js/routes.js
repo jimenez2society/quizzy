@@ -1,7 +1,11 @@
+// a redirect function that takes a path in the parameter and sets the location to that path name
 export const redirect = (path) => {
-  console.log(path);
   window.location.pathname = path.pathName;
 };
+
+// all of these below are objects that contain a boolean and a string
+// the boolean checks if the current path name equals a specified path name
+// the string is just the path name
 export const homePage = {
   isPath: window.location.pathname === "/index.html",
   pathName: "/index.html",

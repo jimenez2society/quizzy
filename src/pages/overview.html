@@ -26,6 +26,7 @@
     <title>quizzy</title>
   </head>
   <body class="h-full bg-primaryDarkBlue pb-10">
+    <!-- header with quizzy logo -->
     <header class="bg-red-500 container-main mx-auto px-10">
       <div class="w-full pt-10">
         <a href="/index.html"
@@ -35,6 +36,7 @@
     </header>
     <main class="container-main mx-auto pt-20">
       <div class="bg-secondaryBlueDark">
+        <!-- testers info and stats -->
         <div class="current-tester-info">
           <div class="current-tester">
             Current tester : <span class="current-tester-name"></span>
@@ -47,18 +49,22 @@
             Score: <span class="score"></span>
           </div>
         </div>
+        <!-- container for all the results -->
         <div class="resultContainer">
+          <!-- correct answers container -->
           <section id="correct-answers" class="w-1/2 mx-auto">
             <h4 class="section-heading">
               Correct <span class="correct-answers-amount">4</span>
             </h4>
           </section>
+          <!-- wrong answers container -->
           <section id="wrong-answers" class="w-1/2 mx-auto">
             <h4 class="section-heading">
               Incorrect <span class="wrong-answers-amount">3</span>
             </h4>
           </section>
         </div>
+        <!-- buttons for overview -->
         <div class="overview-btns">
           <a href="/src/pages/questions.html">Retry?</a>
           <a href="/index.html">Main menu</a>
