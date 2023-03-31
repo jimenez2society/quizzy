@@ -7,14 +7,14 @@ export const homePage = {
   pathName: "/index.html",
 };
 export const quizPage = {
-  isPath: window.location.pathname === "/questions.html",
-  pathName: "/questions.html",
+  isPath: window.location.pathname === "/src/pages/questions.html",
+  pathName: "/src/pages/questions.html",
 };
 export const overviewPage = {
-  isPath: window.location.pathname === "/overview.html",
-  pathName: "/overview.html",
+  isPath: window.location.pathname === "/src/pages/overview.html",
+  pathName: "/src/pages/overview.html",
 };
 export const highscoresPage = {
-  isPath: window.location.pathname === "/highscores.html",
-  pathName: "/highscores.html",
+  isPath: window.location.pathname === "/src/pages/highscores.html",
+  pathName: "/src/pages/highscores.html",
 };

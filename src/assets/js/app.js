@@ -57,7 +57,6 @@ if (quizPage.isPath) {
   if (!user) User.createUserAndSession();
 }
 if (overviewPage.isPath) {
-  console.log({ endScore });
   let scoreEl = document.querySelector(".score");
   let testerNameEl = document.querySelector(".current-tester-name");
   let correctSection = document.querySelector("#correct-answers");

@@ -1,4 +1,4 @@
-import questions from "./Questions.js";
+import questions from "./questions.js";
 import { overviewPage, redirect } from "./routes.js";
 import { User } from "./User.js";
 
