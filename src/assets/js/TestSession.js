@@ -14,8 +14,6 @@ export class TestSession {
     }
     // sets this.currentUser to the currentUser
     this.currentUser = currentUser;
-
-    console.log({ juice: this.currentUser });
     // setting correctAnswers, wrongAnswers, and notAnswered to empty arrays
     this.correctAnswers = [];
     this.wrongAnswers = [];
@@ -46,7 +44,6 @@ export class TestSession {
         // prevents default behavior of form
         this.form.addEventListener("submit", (e) => {
           e.preventDefault();
-          console.log("SUBMITTED IN FORM");
         });
 
         // gets the value for the current question
@@ -58,7 +55,6 @@ export class TestSession {
           e.target
         );
         if (!formData.has("choice")) {
-          console.log(currentQuestion);
           currentQuestion.selectedAnswer = "Not answered";
           this.wrongAnswers.push(currentQuestion);
         }
@@ -129,7 +125,6 @@ export class TestSession {
     let secondsInterval = setInterval(() => {
       // if timerSeconds reaches zero then push question to the notAnswered array because it is assumed they didn't answer
       if (this.timerSeconds < 0) {
-        console.log({ g: questions[this.currentIndex] });
         questions[this.currentIndex].selectedAnswer = "Not answered";
         this.wrongAnswers.push(questions[this.currentIndex]);
         // if last question redirect to overview and clear interval

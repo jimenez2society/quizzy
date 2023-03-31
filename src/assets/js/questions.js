@@ -67,4 +67,3 @@ while (currentIndex !== 0) {
   ];
 }
 export default questions;
-console.log("logged");

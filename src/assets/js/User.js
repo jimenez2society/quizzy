@@ -14,7 +14,6 @@ export class User {
     } else {
       let allUsersArray = JSON.parse(allUsers);
       allUsersArray.push(this);
-      console.log({ allUsersArray });
       localStorage.setItem("allUsers", JSON.stringify(allUsersArray));
     }
     // update new user info instantly
