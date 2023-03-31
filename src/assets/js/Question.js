@@ -60,11 +60,13 @@ export class Question {
   //   returns true or false depending on whether the chosen answer is the correct answer or not
   checkAnswer(letter) {
     let chosenAnswer = this.choices[letter];
-
+    console.log(chosenAnswer);
     if (this.correctAnswer === chosenAnswer) {
       return true;
-    } else {
-      this.selectedAnswer = chosenAnswer;
+    } else if (this.correctAnswer !== chosenAnswer) {
+      // this.selectedAnswer = chosenAnswer;
+      return false;
+    } else if (!chosenAnswer) {
       return false;
     }
   }

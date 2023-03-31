@@ -46,7 +46,9 @@ export class TestSession {
         // prevents default behavior of form
         this.form.addEventListener("submit", (e) => {
           e.preventDefault();
+          console.log("SUBMITTED IN FORM");
         });
+
         // gets the value for the current question
         let currentQuestion = questions[this.currentIndex];
 
@@ -55,7 +57,9 @@ export class TestSession {
           document.querySelector(".choices"),
           e.target
         );
-
+        if (!formData.has("choice")) {
+          this.wrongAnswers.push(currentQuestion);
+        }
         // loops through formData and checks if answer is correct or not
         for (let [key, value] of formData) {
           let isCorrect = currentQuestion.checkAnswer(value);
@@ -131,7 +135,6 @@ export class TestSession {
             JSON.stringify({
               correct: this.correctAnswers,
               wrong: this.wrongAnswers,
-              blank: this.notAnswered,
             })
           );
           location.pathname = "./index.html";
