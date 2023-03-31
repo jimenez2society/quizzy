@@ -48,9 +48,10 @@
     </div>
     <!-- header with quizzy logo -->
     <header class="bg-red-500 container-main mx-auto px-10">
+       <header class="container-main mx-auto px-10">
       <div class="w-full pt-10">
-        <a href="/index.html"
-          ><img src="../assets/svg/quizzyLogo.svg" alt=""
+        <a class="block w-max m-auto md:m-0" href="/index.html"
+          ><img src="../assets/svg//quizzyLogo.svg" alt="Logo for quizzy"
         /></a>
       </div>
     </header>
@@ -58,10 +59,10 @@
     <main class="container-main mx-auto grid grid-cols-12 pt-20 justify-center">
       <!-- the whole container where the data is presented -->
       <div
-        class="question-container bg-secondaryBlueDark 672px w-full col-start-3 col-end-11"
+        class="question-container bg-secondaryBlueDark w-full col-start-1 col-end-13 sm:col-start-2 sm:col-end-12 md:col-start-3 md:col-end-11"
       >
         <!-- header of the question container -->
-        <div class="question-container-heading flex justify-between py-6 px-14">
+        <div class="question-container-heading flex justify-between py-6 px-4 lg:px-14">
           <div class="currentTester flex items-center gap-6">
             <img src="../assets/svg/userIcon.svg" alt="" />
             <span class="username"></span>
@@ -77,7 +78,7 @@
         </div>
         <!-- extra data about test -->
         <div
-          class="test-data flex items-center justify-between w-full pt-10 px-14"
+          class="test-data flex items-center justify-between w-full pt-5 px-14 md:pt-10 md:px-14"
         >
           <p class="questions-left-container">
             <span class="questions-left"></span>
@@ -87,7 +88,7 @@
           </div>
         </div>
         <!-- the question and question choices -->
-        <div class="question px-14 pt-10">
+        <div class="question px-2 pt-10 lg:px-14 lg:pt-10">
           <p class="question-text text-offWhite"></p>
           <form class="choices flex flex-col gap-4 pt-12">
             <div class="question-choice py-4 px-6 flex items-center gap-4">
@@ -98,7 +99,7 @@
                 type="radio"
                 value="a"
               />
-              <label class="choice-label" for="a"></label>
+              <label class="choice-label  " for="a"></label>
               <code class="a text-offWhite"></code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">
@@ -109,7 +110,7 @@
                 type="radio"
                 value="b"
               />
-              <label class="choice-label" for="b"></label
+              <label class="choice-label " for="b"></label
               ><code class="b text-offWhite"></code>
             </div>
             <div class="question-choice py-4 px-6 flex items-center gap-4">

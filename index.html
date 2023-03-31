@@ -27,31 +27,33 @@
   </head>
   <!-- header with quizzy logo -->
   <body class="h-full bg-primaryDarkBlue pb-10">
-    <header class="bg-red-500 container-main mx-auto px-10">
+    <header class="container-main mx-auto px-10">
       <div class="w-full pt-10">
-        <a href="/index.html"
+        <a class="block w-max m-auto md:m-0" href="/index.html"
           ><img src="./src/assets/svg/quizzyLogo.svg" alt="Logo for quizzy"
         /></a>
       </div>
     </header>
 
     <!-- welcome screen content  -->
-    <main class="welcome-screen text-center pt-20">
+    <main class="welcome-screen text-center pt-10 md:pt-16 lg:pt-20 px-5">
       <h1 class="main-heading text-offWhite">Don't get dizzy</h1>
       <h2 class="sub-heading">GET QUIZZY</h2>
       <div class="flex w-max space-y-5 flex-col mx-auto">
         <!-- welcome screen button -->
-        <button class="begin bg-primaryTeal btn-border px-14 py-4">
+        <button
+          class="begin m-auto md:px-14 md:py-4 bg-primaryTeal btn-border px-8 py-2"
+        >
           Start quiz
         </button>
         <button
-          class="new-user-btn secondary-btn px-14 py-4 btn-border text-primaryTeal"
+          class="new-user-btn m-auto md:px-14 md:py-4 secondary-btn px-8 py-2 btn-border text-primaryTeal"
         >
           Begin as new user
         </button>
         <a
           href="/src/pages/highscores.html"
-          class="secondary-btn px-14 py-4 btn-border text-primaryTeal"
+          class="secondary-btn m-auto md:px-14 md:py-4 px-8 py-2 btn-border text-primaryTeal"
         >
           Highscores
         </a>

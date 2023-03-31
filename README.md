@@ -66,7 +66,7 @@
 
 ## Overview
 
-- The website is not yet fully responsive to mobile
+- The website is now fully responsive to mobile
 - I had alot of fun creating this app
 - I was able to use quicksort for one of my functionalities
 

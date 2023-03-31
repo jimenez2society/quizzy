@@ -28,6 +28,7 @@ body {
   margin-bottom: 125px;
   margin-left: 25px;
 }
+
 .secondary-btn {
   border-radius: 4px;
   border: 1px solid #46dfe5;
@@ -40,6 +41,7 @@ body {
   transform: scale(1);
   transition: transform 1.4s ease-in-out, opacity 1.4s ease-in-out;
   opacity: 1;
+  width: 100%;
 }
 .fade {
   opacity: 0;
@@ -48,11 +50,51 @@ body {
 .hide {
   display: none;
 }
+.begin,
+.new-user-btn,
+.secondary-btn {
+  width: 100%;
+  max-width: 100%;
+}
+
 .new-user-btn {
   display: none;
 }
 .new-user-btn.show {
   display: block;
+}
+@media screen and (max-width: 1014px) {
+  .main-heading {
+    font-size: 56px;
+    line-height: 80px;
+    margin-bottom: 5px;
+  }
+  .sub-heading {
+    font-size: 56px;
+    line-height: 100px;
+    margin-bottom: 70px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-heading {
+    font-size: 36px;
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+  .sub-heading {
+    font-size: 36px;
+    line-height: 60px;
+    margin-bottom: 70px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .begin,
+  .new-user-btn,
+  .secondary-btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+  }
 }
 /* ######  QUESTIONS PAGE ###### */
 
@@ -104,7 +146,10 @@ body {
 .question-container-heading {
   border-bottom: 1px solid #757aa4;
   color: #323763;
+  display: flex;
+  flex-direction: row;
 }
+
 .question {
   padding-bottom: 1rem;
 }
@@ -131,6 +176,7 @@ body {
   width: 0%;
   height: 100%;
 }
+
 .question-choice {
   border: 1px solid #757aa4;
   cursor: pointer;
@@ -152,8 +198,8 @@ code {
 }
 .choice-label {
   display: block;
-  width: 16px;
-  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
   border: 1px solid #757aa4;
   border-radius: 50%;
   cursor: pointer;
@@ -240,7 +286,35 @@ code {
   width: max-content;
   margin: 0 auto;
 }
-
+@media screen and (max-width: 762px) {
+  .question-container {
+    height: max-content;
+    width: 100%;
+  }
+  .question-container-heading {
+    flex-direction: column;
+  }
+  .currentTester,
+  .progression {
+    width: 200px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .currentTester {
+    margin-bottom: 1.4rem;
+  }
+  .progressBar {
+    position: relative;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .test-data {
+    display: flex;
+    flex-direction: column-reverse;
+    row-gap: 1rem;
+  }
+}
 /* ######  OVERVIEW PAGE ###### */
 .current-tester-info {
   display: flex;
@@ -250,6 +324,7 @@ code {
   font-size: 0.8rem;
   border-bottom: 1px solid #757aa4;
 }
+
 .current-tester-name {
   display: flex;
   font-weight: 600;
@@ -293,11 +368,10 @@ code {
   border-radius: 0.2rem;
   padding: 1rem;
 }
-.correct-answers-question {
+.correct-answers-question,
+.wrong-answers-question {
   font-size: 1.4rem;
   margin-bottom: 1.4rem;
-}
-.correct-answers-answer {
 }
 
 .wrong-answers-amount {
@@ -312,10 +386,6 @@ code {
   color: #d5d8f0;
   border-radius: 0.2rem;
   padding: 1rem;
-  margin-bottom: 1.4rem;
-}
-.wrong-answers-question {
-  font-size: 1.4rem;
   margin-bottom: 1.4rem;
 }
 .answers {
@@ -368,7 +438,50 @@ code {
   color: #46dfe5;
   text-align: center;
 }
+@media screen and (max-width: 768px) {
+  .current-tester-info {
+    flex-direction: row;
+    padding: 1rem 2rem;
+    font-size: 0.6rem;
+    row-gap: 0.4rem;
+  }
+  .current-tester-name,
+  .current-test-percent--container span,
+  .score {
+    font-size: 0.8rem;
+  }
+  .correct-answers-answer {
+    font-size: 0.8rem;
+  }
 
+  .correct-answers-question,
+  .wrong-answers-question {
+    font-size: 1rem;
+    margin-bottom: 1.4rem;
+  }
+  .wrong-answers-answer-answer,
+  .wrong-answers-answer-givin {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+  }
+  .wrong-answers-answer-givin,
+  .wrong-answers-answer-givin span,
+  .wrong-answers-answer-answer span,
+  .wrong-answers-answer-answer code {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .current-tester-info {
+    flex-direction: column;
+  }
+  .correct-answers-question,
+  .wrong-answers-question {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
 /* ######  HIGHSCORES PAGE ###### */
 .highscores {
   padding: 0 2rem;
