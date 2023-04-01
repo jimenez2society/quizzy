@@ -246,6 +246,7 @@ code {
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: -0.05rem;
+  font-weight: 500;
 }
 .modal-body {
   width: 500px;
@@ -253,6 +254,7 @@ code {
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
+
 .modal-body-form {
   display: flex;
   flex-direction: column;
@@ -308,11 +310,30 @@ code {
     max-width: 100%;
   }
 }
+@media screen and (max-width: 530px) {
+  .modal-body {
+    width: 300px;
+  }
+  .begin-btn {
+    width: 60%;
+    border-radius: 0.3rem;
+  }
+  .modal-header h3 {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 360px) {
   .test-data {
     display: flex;
     flex-direction: column-reverse;
     row-gap: 1rem;
+  }
+  .modal-body {
+    width: 240px;
+  }
+  .begin-btn {
+    width: 80%;
+    border-radius: 0.3rem;
   }
 }
 /* ######  OVERVIEW PAGE ###### */
