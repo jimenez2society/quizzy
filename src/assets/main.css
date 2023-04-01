@@ -11,6 +11,7 @@ body {
 .container-main {
   max-width: 1720px;
 }
+
 /* ######  HOMEPAGE ###### */
 .main-heading {
   font-family: "Krona One";
@@ -291,7 +292,6 @@ code {
 @media screen and (max-width: 762px) {
   .question-container {
     height: max-content;
-    width: 100%;
   }
   .question-container-heading {
     flex-direction: column;
@@ -300,7 +300,7 @@ code {
   .progression {
     width: 200px;
     max-width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
   .currentTester {
     margin-bottom: 1.4rem;
@@ -329,11 +329,18 @@ code {
     row-gap: 1rem;
   }
   .modal-body {
-    width: 240px;
+    width: 250px;
   }
   .begin-btn {
     width: 80%;
     border-radius: 0.3rem;
+  }
+  .currentTester,
+  .progression {
+    margin: 0 auto;
+  }
+  .currentTester {
+    margin-bottom: 1.4rem;
   }
 }
 /* ######  OVERVIEW PAGE ###### */

@@ -1096,7 +1096,6 @@ code {
   .question-container {
     height: -moz-max-content;
     height: max-content;
-    width: 100%;
   }
 
   .question-container-heading {
@@ -1107,7 +1106,7 @@ code {
   .progression {
     width: 200px;
     max-width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
   }
 
   .currentTester {
@@ -1143,12 +1142,21 @@ code {
   }
 
   .modal-body {
-    width: 240px;
+    width: 250px;
   }
 
   .begin-btn {
     width: 80%;
     border-radius: 0.3rem;
+  }
+
+  .currentTester,
+  .progression {
+    margin: 0 auto;
+  }
+
+  .currentTester {
+    margin-bottom: 1.4rem;
   }
 }
 
@@ -1423,6 +1431,11 @@ code {
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 
   .md\:px-14 {
