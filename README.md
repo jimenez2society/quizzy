@@ -72,4 +72,4 @@
 
 ### Live Demo
 
-[quizzy site](https://6426a2e5771562547190ac72--quizzyness.netlify.app)
+[quizzy site](https://642781323a59e01ed21b5a2a--quizzyness.netlify.app)
